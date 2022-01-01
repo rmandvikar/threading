@@ -1,0 +1,19 @@
+name: .NET
+
+on: [ push, pull_request ]
+
+jobs:
+  build-job:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET 6.x
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: |
+        dotnet build rm.Threading.sln \
+          -c Release
