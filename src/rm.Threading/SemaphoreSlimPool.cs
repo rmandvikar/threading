@@ -18,6 +18,8 @@ namespace rm.Threading
 		/// <para></para>
 		/// Environment.ProcessorCount is not always correct so use more slots as buffer,
 		/// with a minimum of 32 slots.
+		/// <para></para>
+		/// Note: Trick borrowed from LazyCache impl.
 		/// </summary>
 		private readonly int poolSize = Math.Max(Environment.ProcessorCount << 3, 32);
 
