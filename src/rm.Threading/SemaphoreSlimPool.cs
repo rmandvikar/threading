@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using static rm.Threading.PoolHelper;
 
 namespace rm.Threading
 {
@@ -13,15 +14,8 @@ namespace rm.Threading
 		/// </summary>
 		private readonly SemaphoreSlim[] pool;
 
-		/// <summary>
-		/// Size of the pool.
-		/// <para></para>
-		/// Environment.ProcessorCount is not always correct so use more slots as buffer,
-		/// with a minimum of 32 slots.
-		/// <para></para>
-		/// Note: Trick borrowed from LazyCache impl.
-		/// </summary>
-		private readonly int poolSize = Math.Max(Environment.ProcessorCount << 3, 32);
+		/// <inheritdoc cref="PoolSize" />
+		private static readonly int poolSize = PoolSize;
 
 		private const int NoMaximum = int.MaxValue;
 
@@ -50,16 +44,9 @@ namespace rm.Threading
 		/// <summary>
 		/// Returns a <see cref="SemaphoreSlim"/> from the pool that the <paramref name="key"/> maps to.
 		/// </summary>
-		/// <exception cref="ArgumentNullException"></exception>
 		public SemaphoreSlim Get(object key)
 		{
-			_ = key ?? throw new ArgumentNullException(nameof(key));
 			return pool[GetIndex(key)];
-		}
-
-		private uint GetIndex(object key)
-		{
-			return unchecked((uint)key.GetHashCode()) % (uint)poolSize;
 		}
 
 		private bool disposed = false;
