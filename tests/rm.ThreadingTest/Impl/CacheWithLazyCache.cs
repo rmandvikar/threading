@@ -36,7 +36,7 @@ namespace rm.ThreadingTest
 		public async Task<T> GetValueAsync<T>(object key)
 		{
 			var valueFactoryCalled = false;
-			var value = await appCache.GetOrAddAsync((string)key, (cacheEntry) =>
+			var value = await appCache.GetOrAddAsync((string)key, async (cacheEntry) =>
 			{
 				diagHelper.CacheMiss(key);
 				valueFactoryCalled = true;
@@ -44,7 +44,7 @@ namespace rm.ThreadingTest
 				cacheEntry.AbsoluteExpirationRelativeToNow = cacheSettings.Ttl;
 				cacheEntry.RegisterPostEvictionCallback(PostEvictionCallback);
 
-				return valueProvider.GetValueAsync<T>(key);
+				return await valueProvider.GetValueAsync<T>(key);
 			});
 			if (!valueFactoryCalled)
 			{
