@@ -1,10 +1,12 @@
-﻿using AutoFixture;
+﻿using System.Security.Cryptography;
+using AutoFixture;
 using AutoFixture.AutoMoq;
 using Microsoft.Extensions.Caching.Memory;
 using Moq;
 using NUnit.Framework;
 using rm.FeatureToggle;
 using rm.Random2;
+using ZiggyCreatures.Caching.Fusion;
 
 namespace rm.ThreadingTest
 {
@@ -111,6 +113,35 @@ namespace rm.ThreadingTest
 			{
 				await Verify_Perf(keyCount, ttlInMs, valueFactoryDelayInMs, batches, errorPercentage,
 					(fixture) => fixture.Create<CacheWithLazyCache>());
+			}
+		}
+
+		[TestFixture]
+		public class CacheWithFusionCacheTests : CacheImplsPerfTests
+		{
+			[Explicit]
+			[Test]
+			[TestCase(1, 5, 10, 200, 0)]
+			[TestCase(10, 25, 10, 200, 0)]
+			[TestCase(100, 25, 10, 200, 0)]
+			[TestCase(1_000, 25, 10, 200, 0)]
+			[TestCase(10_000, 25, 10, 200, 0)]
+			[TestCase(100_000, 25, 10, 200, 0)]
+			[TestCase(1_000, int.MaxValue, 10, 1000, 0)]
+			// inject fault
+			[TestCase(1_000, int.MaxValue, 10, 1000, 10)]
+			[TestCase(1_000, int.MaxValue, 10, 1000, 50)]
+			[TestCase(1_000, int.MaxValue, 10, 1000, 100)]
+			// inject fault with higher delay
+			[TestCase(1_000, int.MaxValue, 20, 1000, 100)]
+			public async Task Verify_Perf(int keyCount, double ttlInMs, int valueFactoryDelayInMs, int batches, double errorPercentage)
+			{
+				await Verify_Perf(keyCount, ttlInMs, valueFactoryDelayInMs, batches, errorPercentage,
+					(fixture) =>
+					{
+						fixture.Register<FusionCacheOptions>(() => null!);
+						return fixture.Create<CacheWithFusionCache>();
+					});
 			}
 		}
 
