@@ -1,5 +1,7 @@
 # Threading
 
+[![NuGet version (rm.Threading)](https://img.shields.io/nuget/v/rm.Threading.svg?style=flat-square)](https://www.nuget.org/packages/rm.Threading/)
+
 ## SemaphoreSlimPool
 
 `MemoryCache` has an issue with reentrancy (see [this](https://github.com/dotnet/runtime/issues/36499)). To tackle this for async, coupled with `SemaphoreSlim` being `IDisposable`, a lock pool of `SemaphoreSlim`s can be used.
