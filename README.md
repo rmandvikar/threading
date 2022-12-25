@@ -1,5 +1,7 @@
 # Threading
 
+Few implementations for pool of locks.
+
 [![NuGet version (rm.Threading)](https://img.shields.io/nuget/v/rm.Threading.svg?style=flat-square)](https://www.nuget.org/packages/rm.Threading/)
 
 ## SemaphoreSlimPool
