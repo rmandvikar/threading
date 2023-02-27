@@ -1,12 +1,11 @@
-﻿namespace rm.ThreadingTest
-{
-	public interface ICacheSettings
-	{
-		TimeSpan Ttl { get; }
-	}
+﻿namespace rm.ThreadingTest;
 
-	public class CacheSettings : ICacheSettings
-	{
-		public TimeSpan Ttl { get; init; }
-	}
+public interface ICacheSettings
+{
+	TimeSpan Ttl { get; }
+}
+
+public class CacheSettings : ICacheSettings
+{
+	public TimeSpan Ttl { get; init; }
 }

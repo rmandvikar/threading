@@ -1,7 +1,6 @@
-﻿namespace rm.ThreadingTest
+﻿namespace rm.ThreadingTest;
+
+public interface IValueProvider
 {
-	public interface IValueProvider
-	{
-		Task<T> GetValueAsync<T>(object key);
-	}
+	Task<T> GetValueAsync<T>(object key);
 }

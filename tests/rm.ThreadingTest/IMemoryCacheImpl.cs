@@ -1,9 +1,8 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 
-namespace rm.ThreadingTest
+namespace rm.ThreadingTest;
+
+public interface IMemoryCacheImpl
 {
-	public interface IMemoryCacheImpl
-	{
-		IMemoryCache Value { get; }
-	}
+	IMemoryCache Value { get; }
 }

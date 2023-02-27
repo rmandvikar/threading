@@ -1,5 +1,4 @@
-﻿namespace rm.ThreadingTest
-{
-	public interface ICachedValueProvider : IValueProvider, IDisposable
-	{ }
-}
+﻿namespace rm.ThreadingTest;
+
+public interface ICachedValueProvider : IValueProvider, IDisposable
+{ }
