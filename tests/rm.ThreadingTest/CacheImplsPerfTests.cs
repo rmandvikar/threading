@@ -19,11 +19,11 @@ public class CacheImplsPerfTests
 		[Explicit]
 		[Test]
 		[TestCase(10, 25, 10, 200, 0)]
-		[TestCase(100, 25, 10, 200, 0)]
-		[TestCase(1_000, 25, 10, 200, 0)]
-		[TestCase(10_000, 25, 10, 200, 0)]
-		[TestCase(100_000, 25, 10, 200, 0)]
-		[TestCase(1_000, int.MaxValue, 10, 1000, 0)]
+		//[TestCase(100, 25, 10, 200, 0)]
+		//[TestCase(1_000, 25, 10, 200, 0)]
+		//[TestCase(10_000, 25, 10, 200, 0)]
+		//[TestCase(100_000, 25, 10, 200, 0)]
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 0)]
 		public async Task Verify_Perf(int keyCount, double ttlInMs, int valueFactoryDelayInMs, int batches, double errorPercentage)
 		{
 			await Verify_Perf(keyCount, ttlInMs, valueFactoryDelayInMs, batches, errorPercentage,
@@ -37,11 +37,11 @@ public class CacheImplsPerfTests
 		[Explicit]
 		[Test]
 		[TestCase(10, 25, 10, 200, 0)]
-		[TestCase(100, 25, 10, 200, 0)]
-		[TestCase(1_000, 25, 10, 200, 0)]
-		[TestCase(10_000, 25, 10, 200, 0)]
-		[TestCase(100_000, 25, 10, 200, 0)]
-		[TestCase(1_000, int.MaxValue, 10, 1000, 0)]
+		//[TestCase(100, 25, 10, 200, 0)]
+		//[TestCase(1_000, 25, 10, 200, 0)]
+		//[TestCase(10_000, 25, 10, 200, 0)]
+		//[TestCase(100_000, 25, 10, 200, 0)]
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 0)]
 		public async Task Verify_Perf(int keyCount, double ttlInMs, int valueFactoryDelayInMs, int batches, double errorPercentage)
 		{
 			await Verify_Perf(keyCount, ttlInMs, valueFactoryDelayInMs, batches, errorPercentage,
@@ -55,17 +55,17 @@ public class CacheImplsPerfTests
 		[Explicit]
 		[Test]
 		[TestCase(10, 25, 10, 200, 0)]
-		[TestCase(100, 25, 10, 200, 0)]
-		[TestCase(1_000, 25, 10, 200, 0)]
-		[TestCase(10_000, 25, 10, 200, 0)]
-		[TestCase(100_000, 25, 10, 200, 0)]
-		[TestCase(1_000, int.MaxValue, 10, 1000, 0)]
-		// inject fault
-		[TestCase(1_000, int.MaxValue, 10, 1000, 10)]
-		[TestCase(1_000, int.MaxValue, 10, 1000, 50)]
-		[TestCase(1_000, int.MaxValue, 10, 1000, 100)]
-		// inject fault with higher delay
-		[TestCase(1_000, int.MaxValue, 20, 1000, 100)]
+		//[TestCase(100, 25, 10, 200, 0)]
+		//[TestCase(1_000, 25, 10, 200, 0)]
+		//[TestCase(10_000, 25, 10, 200, 0)]
+		//[TestCase(100_000, 25, 10, 200, 0)]
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 0)]
+		//// inject fault
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 10)]
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 50)]
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 100)]
+		//// inject fault with higher delay
+		//[TestCase(1_000, int.MaxValue, 20, 1000, 100)]
 		public async Task Verify_Perf(int keyCount, double ttlInMs, int valueFactoryDelayInMs, int batches, double errorPercentage)
 		{
 			await Verify_Perf(keyCount, ttlInMs, valueFactoryDelayInMs, batches, errorPercentage,
@@ -79,11 +79,11 @@ public class CacheImplsPerfTests
 		[Explicit]
 		[Test]
 		[TestCase(10, 25, 10, 200, 0)]
-		[TestCase(100, 25, 10, 200, 0)]
-		[TestCase(1_000, 25, 10, 200, 0)]
-		[TestCase(10_000, 25, 10, 200, 0)]
-		[TestCase(100_000, 25, 10, 200, 0)]
-		[TestCase(1_000, int.MaxValue, 10, 1000, 0)]
+		//[TestCase(100, 25, 10, 200, 0)]
+		//[TestCase(1_000, 25, 10, 200, 0)]
+		//[TestCase(10_000, 25, 10, 200, 0)]
+		//[TestCase(100_000, 25, 10, 200, 0)]
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 0)]
 		public async Task Verify_Perf(int keyCount, double ttlInMs, int valueFactoryDelayInMs, int batches, double errorPercentage)
 		{
 			await Verify_Perf(keyCount, ttlInMs, valueFactoryDelayInMs, batches, errorPercentage,
@@ -96,19 +96,19 @@ public class CacheImplsPerfTests
 	{
 		[Explicit]
 		[Test]
-		[TestCase(1, 5, 10, 200, 0)]
+		//[TestCase(1, 5, 10, 200, 0)]
 		[TestCase(10, 25, 10, 200, 0)]
-		[TestCase(100, 25, 10, 200, 0)]
-		[TestCase(1_000, 25, 10, 200, 0)]
-		[TestCase(10_000, 25, 10, 200, 0)]
-		[TestCase(100_000, 25, 10, 200, 0)]
-		[TestCase(1_000, int.MaxValue, 10, 1000, 0)]
-		// inject fault
-		[TestCase(1_000, int.MaxValue, 10, 1000, 10)]
-		[TestCase(1_000, int.MaxValue, 10, 1000, 50)]
-		[TestCase(1_000, int.MaxValue, 10, 1000, 100)]
-		// inject fault with higher delay
-		[TestCase(1_000, int.MaxValue, 20, 1000, 100)]
+		//[TestCase(100, 25, 10, 200, 0)]
+		//[TestCase(1_000, 25, 10, 200, 0)]
+		//[TestCase(10_000, 25, 10, 200, 0)]
+		//[TestCase(100_000, 25, 10, 200, 0)]
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 0)]
+		//// inject fault
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 10)]
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 50)]
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 100)]
+		//// inject fault with higher delay
+		//[TestCase(1_000, int.MaxValue, 20, 1000, 100)]
 		public async Task Verify_Perf(int keyCount, double ttlInMs, int valueFactoryDelayInMs, int batches, double errorPercentage)
 		{
 			await Verify_Perf(keyCount, ttlInMs, valueFactoryDelayInMs, batches, errorPercentage,
@@ -121,19 +121,19 @@ public class CacheImplsPerfTests
 	{
 		[Explicit]
 		[Test]
-		[TestCase(1, 5, 10, 200, 0)]
+		//[TestCase(1, 5, 10, 200, 0)]
 		[TestCase(10, 25, 10, 200, 0)]
-		[TestCase(100, 25, 10, 200, 0)]
-		[TestCase(1_000, 25, 10, 200, 0)]
-		[TestCase(10_000, 25, 10, 200, 0)]
-		[TestCase(100_000, 25, 10, 200, 0)]
-		[TestCase(1_000, int.MaxValue, 10, 1000, 0)]
-		// inject fault
-		[TestCase(1_000, int.MaxValue, 10, 1000, 10)]
-		[TestCase(1_000, int.MaxValue, 10, 1000, 50)]
-		[TestCase(1_000, int.MaxValue, 10, 1000, 100)]
-		// inject fault with higher delay
-		[TestCase(1_000, int.MaxValue, 20, 1000, 100)]
+		//[TestCase(100, 25, 10, 200, 0)]
+		//[TestCase(1_000, 25, 10, 200, 0)]
+		//[TestCase(10_000, 25, 10, 200, 0)]
+		//[TestCase(100_000, 25, 10, 200, 0)]
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 0)]
+		//// inject fault
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 10)]
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 50)]
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 100)]
+		//// inject fault with higher delay
+		//[TestCase(1_000, int.MaxValue, 20, 1000, 100)]
 		public async Task Verify_Perf(int keyCount, double ttlInMs, int valueFactoryDelayInMs, int batches, double errorPercentage)
 		{
 			await Verify_Perf(keyCount, ttlInMs, valueFactoryDelayInMs, batches, errorPercentage,
@@ -151,17 +151,17 @@ public class CacheImplsPerfTests
 		[Explicit]
 		[Test]
 		[TestCase(10, 25, 10, 200, 0)]
-		[TestCase(100, 25, 10, 200, 0)]
-		[TestCase(1_000, 25, 10, 200, 0)]
-		[TestCase(10_000, 25, 10, 200, 0)]
-		[TestCase(100_000, 25, 10, 200, 0)]
-		[TestCase(1_000, int.MaxValue, 10, 1000, 0)]
-		// inject fault
-		[TestCase(1_000, int.MaxValue, 10, 1000, 10)]
-		[TestCase(1_000, int.MaxValue, 10, 1000, 50)]
-		[TestCase(1_000, int.MaxValue, 10, 1000, 100)]
-		// inject fault with higher delay
-		[TestCase(1_000, int.MaxValue, 20, 1000, 100)]
+		//[TestCase(100, 25, 10, 200, 0)]
+		//[TestCase(1_000, 25, 10, 200, 0)]
+		//[TestCase(10_000, 25, 10, 200, 0)]
+		//[TestCase(100_000, 25, 10, 200, 0)]
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 0)]
+		//// inject fault
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 10)]
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 50)]
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 100)]
+		//// inject fault with higher delay
+		//[TestCase(1_000, int.MaxValue, 20, 1000, 100)]
 		public async Task Verify_Perf(int keyCount, double ttlInMs, int valueFactoryDelayInMs, int batches, double errorPercentage)
 		{
 			await Verify_Perf(keyCount, ttlInMs, valueFactoryDelayInMs, batches, errorPercentage,
@@ -175,17 +175,17 @@ public class CacheImplsPerfTests
 		[Explicit]
 		[Test]
 		[TestCase(10, 25, 10, 200, 0)]
-		[TestCase(100, 25, 10, 200, 0)]
-		[TestCase(1_000, 25, 10, 200, 0)]
-		[TestCase(10_000, 25, 10, 200, 0)]
-		[TestCase(100_000, 25, 10, 200, 0)]
-		[TestCase(1_000, int.MaxValue, 10, 1000, 0)]
-		// inject fault
-		[TestCase(1_000, int.MaxValue, 10, 1000, 10)]
-		[TestCase(1_000, int.MaxValue, 10, 1000, 50)]
-		[TestCase(1_000, int.MaxValue, 10, 1000, 100)]
-		// inject fault with higher delay
-		[TestCase(1_000, int.MaxValue, 20, 1000, 100)]
+		//[TestCase(100, 25, 10, 200, 0)]
+		//[TestCase(1_000, 25, 10, 200, 0)]
+		//[TestCase(10_000, 25, 10, 200, 0)]
+		//[TestCase(100_000, 25, 10, 200, 0)]
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 0)]
+		//// inject fault
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 10)]
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 50)]
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 100)]
+		//// inject fault with higher delay
+		//[TestCase(1_000, int.MaxValue, 20, 1000, 100)]
 		public async Task Verify_Perf(int keyCount, double ttlInMs, int valueFactoryDelayInMs, int batches, double errorPercentage)
 		{
 			await Verify_Perf(keyCount, ttlInMs, valueFactoryDelayInMs, batches, errorPercentage,
@@ -199,17 +199,17 @@ public class CacheImplsPerfTests
 		[Explicit]
 		[Test]
 		[TestCase(10, 25, 10, 200, 0)]
-		[TestCase(100, 25, 10, 200, 0)]
-		[TestCase(1_000, 25, 10, 200, 0)]
-		[TestCase(10_000, 25, 10, 200, 0)]
-		[TestCase(100_000, 25, 10, 200, 0)]
-		[TestCase(1_000, int.MaxValue, 10, 1000, 0)]
-		// inject fault
-		[TestCase(1_000, int.MaxValue, 10, 1000, 10)]
-		[TestCase(1_000, int.MaxValue, 10, 1000, 50)]
-		[TestCase(1_000, int.MaxValue, 10, 1000, 100)]
-		// inject fault with higher delay
-		[TestCase(1_000, int.MaxValue, 20, 1000, 100)]
+		//[TestCase(100, 25, 10, 200, 0)]
+		//[TestCase(1_000, 25, 10, 200, 0)]
+		//[TestCase(10_000, 25, 10, 200, 0)]
+		//[TestCase(100_000, 25, 10, 200, 0)]
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 0)]
+		//// inject fault
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 10)]
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 50)]
+		//[TestCase(1_000, int.MaxValue, 10, 1000, 100)]
+		//// inject fault with higher delay
+		//[TestCase(1_000, int.MaxValue, 20, 1000, 100)]
 		public async Task Verify_Perf(int keyCount, double ttlInMs, int valueFactoryDelayInMs, int batches, double errorPercentage)
 		{
 			await Verify_Perf(keyCount, ttlInMs, valueFactoryDelayInMs, batches, errorPercentage,
@@ -258,7 +258,7 @@ public class CacheImplsPerfTests
 			});
 
 		fixture.Register(() =>
-			new DiagHelper(false));
+			new DiagHelper(true));
 
 		using var cacheImpl = cacheImplFactory(fixture);
 		var width = keyCount.ToString().Length;

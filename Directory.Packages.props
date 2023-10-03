@@ -7,7 +7,7 @@
     <PackageVersion Include="AutoFixture" Version="4.17.0" />
     <PackageVersion Include="AutoFixture.AutoMoq" Version="4.17.0" />
     <PackageVersion Include="LazyCache" Version="2.4.0" />
-    <PackageVersion Include="Microsoft.Extensions.Caching.Memory" Version="6.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Caching.Memory" Version="7.0.0" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.4.1" />
     <PackageVersion Include="NUnit" Version="3.13.3" />
     <PackageVersion Include="NUnit3TestAdapter" Version="4.3.1" />
