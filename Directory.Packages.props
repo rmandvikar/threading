@@ -11,8 +11,8 @@
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.4.1" />
     <PackageVersion Include="NUnit" Version="3.13.3" />
     <PackageVersion Include="NUnit3TestAdapter" Version="4.3.1" />
-    <PackageVersion Include="rm.FeatureToggle" Version="2.2.0" />
-    <PackageVersion Include="rm.Random2" Version="2.3.0" />
+    <PackageVersion Include="rm.FeatureToggle" Version="3.1.1" />
+    <PackageVersion Include="rm.Random2" Version="3.0.5" />
     <PackageVersion Include="ZiggyCreatures.FusionCache" Version="0.13.0" />
   </ItemGroup>
 </Project>
