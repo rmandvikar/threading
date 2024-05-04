@@ -8,6 +8,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);1591;NU1507</NoWarn>
     <LangVersion>latest</LangVersion>
+    <PackageId>rmandvikar.Threading</PackageId>
     <Description>Provides threading helpers.</Description>
     <PackageTags>threading</PackageTags>
     <RepositoryUrl>https://github.com/rmandvikar/threading</RepositoryUrl>
